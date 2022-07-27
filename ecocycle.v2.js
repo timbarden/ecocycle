@@ -1,19 +1,6 @@
-// v2.0: 25/03/2021 	- rewritten in pure js with addition of childNodes and groupBy for more complex cycles.
-// v2.1: 05/05/2021 	- nav + dots bug fix for incorrect subsequent actives on click
-//						- addition of pauseOnHover option
-// v2.2: 17/11/2021 	- addition of onReady function
-//						- addition of play/pause/prev/next functions
-//						- fix for incorrect dotsContainer classname
-//						- change 'timeout' to 'opts' in onChange output
-// v2.21: 16/12/2021 	- shuffle changed to pre-init for external benefits + tidy up of pre-init setup
-// v2.22: 21/01/2022 	- pauseOnHover fix + addition of log option
-// v2.23: 31/01/2022 	- change of target implementation to separate argument
-
 var ecoCycle = function(target, opts){
 	
-
 	var ecoClass = "ecocycle";
-
 
 	//////////////////////////
 	// defaults

@@ -1,3 +1,3 @@
 # ecocycle.js
 
-basic slideshow functionality
+Back-to-basics JS slideshow functionality
