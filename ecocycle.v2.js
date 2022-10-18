@@ -23,7 +23,12 @@ var ecoCycle = function(target, opts){
 		shuffle: false,
 		timeout: 7000
 	}
-	var blnTarget = document.querySelector(target) != null;
+	if (typeof target == "object"){
+		target = target
+	} else {
+		target = document.querySelector(target);
+	}
+	var blnTarget = target != null;
 
 	if (blnTarget){
 		for (var property in opts) {
@@ -37,8 +42,6 @@ var ecoCycle = function(target, opts){
 			ecoTimer,
 			slideItems;
 			
-		target = document.querySelector(target);
-
 		slideItems = target.children;
 		opts.childNodes != '' && (opts.shuffle = false, slideItems = target.querySelectorAll(opts.childNodes));
 		var intItems = slideItems.length;
@@ -61,7 +64,11 @@ var ecoCycle = function(target, opts){
 			}
 	
 			if (opts.nav){
-				opts.navContainer = document.querySelector(opts.navContainer);
+				if (typeof opts.navContainer == "object"){
+					opts.navContainer = opts.navContainer
+				} else {
+					opts.navContainer = document.querySelector(opts.navContainer);
+				}
 				if (intItems > 1){
 					opts.navContainer.classList.add(ecoClass + '__nav');
 					appendNav('prev', opts.navContainer, opts.navChild[0], "");
@@ -69,7 +76,11 @@ var ecoCycle = function(target, opts){
 				}
 			}
 			if (opts.dots){
-				opts.dotsContainer = document.querySelector(opts.dotsContainer);
+				if (typeof opts.dotsContainer == "object"){
+					opts.dotsContainer = opts.dotsContainer
+				} else {
+					opts.dotsContainer = document.querySelector(opts.dotsContainer);
+				}
 				opts.dotsContainer.classList.add(ecoClass + '__dots');
 				for (var i=0; i<intItems; i+=opts.groupBy){
 					appendNav('dots', opts.dotsContainer, opts.dotsChild, i);
